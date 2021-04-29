@@ -25,11 +25,13 @@
 
     <!-- Link Font Awesome -->
     <script src="https://kit.fontawesome.com/b627ee8931.js" crossorigin="anonymous"></script>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.4.1/font/bootstrap-icons.css">
+    
 
     <!-- CSS Custom -->
     <link rel="stylesheet" href="css/style.css">
 
-    <title>Default</title>
+    <title>CryptoMarket</title>
 </head>
 
 <body>
@@ -37,8 +39,18 @@
     <!-- Nav -->
     <nav class="navbar navbar-light bg-light static-top">
         <div class="container">
-            <a class="navbar-brand" href="#">Start Bootstrap</a>
-            <a class="btn btn-primary" href="#">Sign In</a>
+            <a class="navbar-brand" href="#">CryptoMarket</a>
+            <a class="btn btn-primary" id="donar" href="#" data-bs-toggle="modal" data-bs-target="#exampleModal">Donar</a>
+        </div>
+        <!-- Modal -->
+        <div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+
+            <!-- <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button> -->
+            
+            <div class="modal-dialog modal-lg modal-dialog-centered">
+                <img src="Img/WalletBNB.png" class="img-fluid rounded" alt="Imagen BNB">
+            </div>
+                
         </div>
     </nav>
 
@@ -46,55 +58,110 @@
     <header class="masthead text-white text-center">
         <div class="overlay"></div>
         <div class="container">
-          <div class="row">
-            <div class="col-xl-9 mx-auto">
-              <h1 class="mb-5">Build a landing page for your business or project and generate more leads!</h1>
-            </div>
-            <div class="col-md-10 col-lg-8 col-xl-7 mx-auto">
-              <form>
-                <div class="form-row">
-                  <div class="col-12 col-md-9 mb-2 mb-md-0">
-                    <input type="email" class="form-control form-control-lg" placeholder="Enter your email...">
-                  </div>
-                  <div class="col-12 col-md-3">
-                    <button type="submit" class="btn btn-block btn-lg btn-primary">Sign up!</button>
-                  </div>
+            <div class="row">
+                <div class="col-xl-9 mx-auto">
+                    <h1 class="mb-5">Conozca como está el criptomercado. El precio de Bitcoin y las principales criptomonedas hoy en tiempo.</h1>
                 </div>
-              </form>
-            </div>
-          </div>
-        </div>
-      </header>
+                <div class="col-md-10 col-lg-8 col-xl-7 mx-auto">
+                    
+                    <form id="formulario">
+                        <div class="row">
+                            <div class="row container-fluid">
 
-    <!-- Icons Grid -->
-    <section class="features-icons bg-light text-center">
+                                <div class="form-group my-2 col-4 text-start">
+                                    <label class="" for="cryptomoneda">Coin</label>
+                                    <input type="text" id="coin" placeholder="cryptomoneda..." class="form-control" required>
+                                </div>
+
+                                <div class="form-group my-2 col-4 text-start">
+                                    <label class="" for="cryptomoneda">Precio U$</label>
+                                    <input type="text" id="price" placeholder="Precio actual..." class="form-control" required>
+                                </div>
+
+                                <div class="form-group my-2 col-4 text-start">
+                                    <label class="" for="cryptomoneda">Market Cap U$</label>
+                                    <input type="text" id="mktcp" placeholder="Mercado actual..." class="form-control" required>
+                                </div>
+
+                                <div class="text-end gap-2 mt-3">
+                                    <button onclick="mostrar()" class="btn btn-primary" type="submit">Revisar</button>
+                                </div>
+                            </div>
+                            
+                        </div>
+                    </form>
+
+                </div>
+            </div>
+        </div>
+    </header>
+
+        <!-- Section Analys -->
+
+        <!-- <section id="analisis" class="container-fluid">
+
+            <div class="container py-5">
+
+                <div class="col-lg-12 card fw-bold">
+                    <div class="card-header text-center bg-dark text-light">
+                        <h4>Analisis criptomonedas</h4>
+                    </div>
+
+                    <div class="row">
+                        <div class="col-6"> 
+                            <img class="img-fluid" src="Img/mohammadreza-alidoost-mn1UrYWZW-k-unsplash.jpeg" alt="imagenReferencia">
+                        </div>
+
+
+                        <div class="col-6">
+                            <form id="analisisForm" class="row card-body my-2 border-2">
+                            </form>
+                        </div>
+                        
+                    </div>
+                    
+                </div>
+            </div>
+
+        </section> -->
+
+        
+        <!-- Section Page -->
+    
+    <section id="page" class="mt-2 features-icons bg-light text-center">
         <div class="container">
             <div class="row">
                 <div class="col-lg-4">
                     <div class="features-icons-item mx-auto mb-5 mb-lg-0 mb-lg-3">
                         <div class="features-icons-icon d-flex">
-                            <i class="icon-screen-desktop m-auto text-primary"></i>
+                            <i class="fas fa-search-dollar icon-screen-desktop m-auto text-dark" style="font-size: 4rem; "></i>
                         </div>
-                        <h3>Fully Responsive</h3>
-                        <p class="lead mb-0">This theme will look great on any device, no matter the size!</p>
+                        <h3>Coingecko</h3>
+                        <p class="lead mb-0">Cryptocurrency Prices by Market Cap.</p>
+                        <a class="my-3 btn text-md-center btn-primary" href="https://www.coingecko.com/en">Saber más</a>
                     </div>
                 </div>
                 <div class="col-lg-4">
                     <div class="features-icons-item mx-auto mb-5 mb-lg-0 mb-lg-3">
                         <div class="features-icons-icon d-flex">
-                            <i class="icon-layers m-auto text-primary"></i>
+                            <i class="bi bi-wallet2 icon-screen-desktop m-auto text-dark" style="font-size: 4rem; "></i>
+                          
                         </div>
-                        <h3>Bootstrap 4 Ready</h3>
-                        <p class="lead mb-0">Featuring the latest build of the new Bootstrap 4 framework!</p>
+                        <h3>PancakeSwap</h3>
+                        <p class="lead mb-0">The #1 AMM and yield farm on Binance Smart Chain.</p>
+                        <a class="my-3 btn text-md-center btn-primary" href="https://pancakeswap.finance/">Saber más</a>
                     </div>
                 </div>
                 <div class="col-lg-4">
-                    <div class="features-icons-item mx-auto mb-0 mb-lg-3">
+                    <div class="features-icons-item mx-auto mb-5 mb-lg-0 mb-lg-3">
                         <div class="features-icons-icon d-flex">
-                            <i class="icon-check m-auto text-primary"></i>
+                            <i class="far fa-chart-bar icon-screen-desktop m-auto text-dark" style="font-size: 4rem;"></i>
+                            
                         </div>
-                        <h3>Easy to Use</h3>
-                        <p class="lead mb-0">Ready to use with your own content, or customize the source files!</p>
+                        <h3>Binance</h3>
+                        <p class="lead mb-0">Buy & sell Crypto in minutes
+                            Join the world's largest crypto exchange.</p>
+                        <a class="my-3 btn text-md-center btn-primary" href="https://www.binance.com/en">Saber más</a>
                     </div>
                 </div>
             </div>
