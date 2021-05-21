@@ -1,0 +1,86 @@
+//alert("Advertncia")
+
+
+/* const cryptomonedaSelect = document.querySelector("#criptomonedas");
+
+const obtenerCriptomonedas = criptomonedas => new Promise( resolve => {
+    resolve(criptomonedas);
+}); 
+
+
+
+document.addEventListener("DOMContentLoaded", () => {
+    consultarCriptomonedas();
+});
+
+function consultarCriptomonedas() {
+    const url = "https://min-api.cryptocompare.com/data/top/mktcapfull?limit=100&tsym=USD";
+
+    fetch(url)
+        .then( respuesta => respuesta.json() )
+        .then( resultado => obtenerCriptomonedas(resultado.Data) )
+        .then( criptomonedas => selectCriptomonedas(criptomonedas) ) 
+
+        console.log(criptomonedas)
+
+};
+
+// const botonCripto = $('#criptomonedas')
+
+// botonCripto.on ('click', function(event) {
+// event.preventDefault()
+
+
+// });
+
+
+function selectCriptomonedas(criptomonedas) {
+     criptomonedas.forEach( cripto => {
+         const { FullName, Name } = cripto.CoinInfo;
+
+
+         const option = document.createElement("option");
+         option.value = Name;
+         option.textContent = FullName;
+         cryptomonedaSelect.appendChild(option);
+    })
+
+
+};
+
+
+// https://min-api.cryptocompare.com/data/top/mktcapfull?limit=100&tsym=USD
+// https://min-api.cryptocompare.com/data/pricemultifull?fsyms=BTC&tsyms=USD
+// https://coingecko.com/api/documentations/v3/coins/{id}/tickers
+
+
+// jQuery section
+
+const invInicial = $('#inputCapital');
+const aprAnual = $('#inputApr');
+const irDias = $('#inputIr')
+const botonIr = $('#buttonAnalisis');
+
+//console.log(invInicial);
+//console.log(aprAnual);
+//console.log(irDias);
+//console.log(botonIr);
+
+botonIr.on('click', function(event) {
+    event.preventDefault()
+
+    const valorUno = invInicial.val()
+    const valorDos = aprAnual.val()
+
+    if (valorUno.length >= 1,  valorDos.length >= 1) {
+
+
+        console.log( invInicial.val(), aprAnual.val() )
+
+    }
+
+});
+
+
+/*
+

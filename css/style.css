@@ -14,14 +14,6 @@ body {
     scroll-behavior: smooth;
 }
 
-/* .header {
-    background-image: $gradient-header, url(img/);
-    height: 100vh;
-    background-repeat: no-repeat;
-    background-size: cover;
-    background-attachment: fixed;
-    background-position: center;
-} */
 
 header.masthead  {
     position: relative;
@@ -35,15 +27,7 @@ header.masthead  {
     opacity: 0.8;
 }
 
-/* header.masthead .overlay {
-    position: absolute;
-    background-color: #212529;
-    height: 100%;
-    width: 100%;
-    top: 0;
-    left: 0;
-    opacity: 0.3;
-} */
+
 
 header.masthead h1 {
     font-size: 2rem;
@@ -56,5 +40,20 @@ header.masthead h1 {
 
 .features-icons-icon {
     height: 7rem;
+}
+
+
+
+.inner{ 
+    
+    overflow: hidden; 
+}
+
+.inner img{
+    transition: all 1.6s ease-in;
+}
+
+.inner:hover img{
+    transform: scale(1.5);
 }
 
