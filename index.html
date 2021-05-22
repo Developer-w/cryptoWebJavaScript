@@ -26,7 +26,7 @@
     <!-- Link Font Awesome -->
     <script src="https://kit.fontawesome.com/b627ee8931.js" crossorigin="anonymous"></script>
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.4.1/font/bootstrap-icons.css">
-    
+
 
     <!-- CSS Custom -->
     <link rel="stylesheet" href="css/style.css">
@@ -40,17 +40,18 @@
     <nav class="navbar navbar-light bg-light static-top">
         <div class="container">
             <a class="navbar-brand" href="#">CryptoMarket</a>
-            <a class="btn btn-primary" id="donar" href="#" data-bs-toggle="modal" data-bs-target="#exampleModal">Donar</a>
+            <a class="btn btn-primary" id="donar" href="#" data-bs-toggle="modal"
+                data-bs-target="#exampleModal">Donar</a>
         </div>
         <!-- Modal -->
         <div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
 
             <!-- <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button> -->
-            
+
             <div class="modal-dialog modal-lg modal-dialog-centered">
                 <img src="Img/WalletBNB.png" class="img-fluid rounded" alt="Imagen BNB">
             </div>
-                
+
         </div>
     </nav>
 
@@ -60,34 +61,39 @@
         <div class="container">
             <div class="row">
                 <div class="col-xl-9 mx-auto">
-                    <h1 class="mb-5">Conozca como está el criptomercado. El precio de Bitcoin y las principales criptomonedas hoy en tiempo.</h1>
+                    <h1 class="mb-5">Conozca como está el criptomercado. El precio de Bitcoin y las principales
+                        criptomonedas hoy en tiempo real.</h1>
                 </div>
                 <div class="col-md-10 col-lg-8 col-xl-7 mx-auto">
-                    
+
                     <form id="formulario">
                         <div class="row">
                             <div class="row container-fluid">
 
                                 <div class="form-group my-2 col-4 text-start">
                                     <label class="" for="cryptomoneda">Coin</label>
-                                    <input type="text" id="coin" placeholder="cryptomoneda..." class="form-control" required>
+                                    <select class="form-control" id="criptomonedas" name="criptomoneda" required>
+                                        <option value="">Criptomoneda...</option>
+                                    </select>
                                 </div>
 
                                 <div class="form-group my-2 col-4 text-start">
                                     <label class="" for="cryptomoneda">Precio U$</label>
-                                    <input type="text" id="price" placeholder="Precio actual..." class="form-control" required>
+                                    <input value="" disabled selected type="text" id="price"
+                                        placeholder="Precio actual..." class="form-control" required>
                                 </div>
 
                                 <div class="form-group my-2 col-4 text-start">
                                     <label class="" for="cryptomoneda">Market Cap U$</label>
-                                    <input type="text" id="mktcp" placeholder="Mercado actual..." class="form-control" required>
+                                    <input value="" disabled selected type="text" id="mktcp"
+                                        placeholder="Mercado actual..." class="form-control" required>
                                 </div>
 
                                 <div class="text-end gap-2 mt-3">
-                                    <button onclick="mostrar()" class="btn btn-primary" type="submit">Revisar</button>
+                                    <button id="botonCripto" class="btn btn-primary" type="submit">Revisar</button>
                                 </div>
                             </div>
-                            
+
                         </div>
                     </form>
 
@@ -96,45 +102,151 @@
         </div>
     </header>
 
-        <!-- Section Analys -->
+    <!-- Section Analys -->
 
-        <!-- <section id="analisis" class="container-fluid">
+    <section id="page" class="mt-2 py-5">
+        <div class="container">
 
-            <div class="container py-5">
+            <div class="row d-flex justify-content-center">
+                <div class="col-lg-4 mb-sm-4">
+                    <div class="card shadow">
 
-                <div class="col-lg-12 card fw-bold">
-                    <div class="card-header text-center bg-dark text-light">
-                        <h4>Analisis criptomonedas</h4>
-                    </div>
-
-                    <div class="row">
-                        <div class="col-6"> 
-                            <img class="img-fluid" src="Img/mohammadreza-alidoost-mn1UrYWZW-k-unsplash.jpeg" alt="imagenReferencia">
+                        <div class="inner">
+                            <img src="Img/marga-santoso-OmPqCwX422Y-unsplash.jpeg" class="card-img-top" alt="...">
                         </div>
 
+                        <div class="card-body p-5">
+                            <h5 class="card-title text-center pb-3">Analisis de Inversion (DeFI)</h5>
+                            <form class="">
+                                <div class=" form-group pb-3">
+                                    <label for="formGroupExampleInput">Capital Inicial $USD</label>
+                                    <input type="text" class="form-control" id="inputCapital"
+                                        placeholder="Ingrese el capital Inicial en USD">
+                                </div>
+                                <div class="form-group pb-3">
+                                    <label for="formGroupExampleInput2">% APR/Rentabilidad Anual de Retorno</label>
+                                    <input type="text" class="form-control" id="inputApr"
+                                        placeholder="Ingrese la Rentabilidad Anual">
+                                </div>
+                                <div class="form-group pb-3">
+                                    <label for="formGroupExampleInput2">IR/Periodo de Recuperación</label>
+                                    <input type="text" disabled selected class="form-control"
+                                        id="inputIr" placeholder="Dias para recupera su Inversion">
+                                </div>
 
-                        <div class="col-6">
-                            <form id="analisisForm" class="row card-body my-2 border-2">
                             </form>
+
+                            <div class="text-center">
+                                <p class="card-text text-center">Calcular de forma sencilla y rápida cuantos días
+                                    necesita para recuperar su inversión.</p>
+                                    <div class="text-center mt-3">
+                                        <button id="buttonAnalisis" class="btn btn-primary" type="submit">Analizar</button>
+                                    </div>
+                            </div>
+
                         </div>
-                        
                     </div>
-                    
                 </div>
+
+                <div class="col-lg-4 mb-sm-4">
+                    <div class="card shadow">
+
+                        <div class="inner">
+                            <img src="Img/pexels-anna-nekrashevich-6801648.jpeg" class="card-img-top" alt="...">
+                        </div>
+
+                        <div class="card-body p-5">
+                            <h5 class="card-title pb-3 text-center">Calculadora Criptomoneda</h5>
+
+                            <form class="">
+
+                                <div class="form-group pb-3">
+                                    <label class="" for="cryptomoneda">Coin</label>
+                                    <select class="form-control" id="criptomonedas" name="criptomoneda" required>
+                                        <option value="">Criptomoneda...</option>
+                                    </select>
+                                </div> 
+
+                                <div class=" form-group pb-3">
+                                    <label for="formGroupcoinInput">Cantididad de Satoshi</label>
+                                    <input type="text" class="form-control" id="coinInput"
+                                        placeholder="Satoshi">
+                                </div>
+                                <div class="form-group pb-3">
+                                    <label for="formGroupusdInput">Valor En $USD</label>
+                                    <input type="text" class="form-control" id="usdInput"
+                                        placeholder="USD">
+                                </div>
+
+                            </form>
+
+                            <div class="text-center">
+                                <p class="card-text text-center">Seleccione su cryptomoneda y alculale su Valor. Ingrese el valor en satoshi o en USD</p>
+                                <div class="text-center gap-2 mt-3">
+                                    <button onclick="calcularCripto()" class="btn btn-primary" type="submit">Calcular</button>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="col-lg-4 mb-sm-4">
+                    <div class="card shadow ">
+
+                        <div class="inner">
+                            <img src="Img/pexels-anna-nekrashevich-6801639.jpeg" class="card-img-top" alt="...">
+                        </div>
+
+                        <div class="card-body p-5">
+                            <h5 class="card-title pb-3 text-center">Análisis de CriptoActivo</h5>
+
+                            <form class="">
+                                <div class="form-group pb-3">
+                                    <label class="" for="cryptomoneda">Coin</label>
+                                    <select class="form-control" id="criptomonedas" name="criptomoneda" required>
+                                        <option value="">Criptomoneda...</option>
+                                    </select>
+                                </div> 
+                                <div class=" form-group pb-3">
+                                    <label for="formGroupPrecioTargetInput">Precio Target</label>
+                                    <input type="text" class="form-control" id="formGroupPrecioTarget"
+                                        placeholder="Ingrese el precio Objetivo">
+                                </div>
+                                <div class="form-group pb-3">
+                                    <label for="formGroupMarketCapTargetInput">MarketCap Target / Supply Target</label>
+                                    <input type="text" disabled selected class="form-control"
+                                        id="formGroupMarketCapTarget" placeholder="Debe Alcanzar un Market y Supply de...">
+                                </div>
+
+                            </form>
+
+                            <div class="text-center">
+                                <p class="card-text text-center">Selecciones su criptomoneda y su valor objetivo    .</p>
+                                <div class="text-center gap-2 mt-3">
+                                    <button onclick="AnalizarCripto()" class="btn btn-primary" type="submit">Calcular</button>
+                                </div>
+                            </div>
+
+                        </div>
+                    </div>
+                </div> -->
             </div>
 
-        </section> -->
+        </div>
+    </section>
 
-        
-        <!-- Section Page -->
-    
-    <section id="page" class="mt-2 features-icons bg-light text-center">
+
+
+    <!-- Section Page -->
+
+    <section id="page" class="mt-2 features-icons bg-light text-center py-5">
         <div class="container">
             <div class="row">
                 <div class="col-lg-4">
                     <div class="features-icons-item mx-auto mb-5 mb-lg-0 mb-lg-3">
                         <div class="features-icons-icon d-flex">
-                            <i class="fas fa-search-dollar icon-screen-desktop m-auto text-dark" style="font-size: 4rem; "></i>
+                            <i class="fas fa-search-dollar icon-screen-desktop m-auto text-dark"
+                                style="font-size: 4rem; "></i>
                         </div>
                         <h3>Coingecko</h3>
                         <p class="lead mb-0">Cryptocurrency Prices by Market Cap.</p>
@@ -145,23 +257,26 @@
                     <div class="features-icons-item mx-auto mb-5 mb-lg-0 mb-lg-3">
                         <div class="features-icons-icon d-flex">
                             <i class="bi bi-wallet2 icon-screen-desktop m-auto text-dark" style="font-size: 4rem; "></i>
-                          
+
                         </div>
-                        <h3>PancakeSwap</h3>
-                        <p class="lead mb-0">The #1 AMM and yield farm on Binance Smart Chain.</p>
-                        <a class="my-3 btn text-md-center btn-primary" href="https://pancakeswap.finance/">Saber más</a>
+                        <h3>DeFI</h3>
+                        <p class="lead mb-0">Los token DeFi son específicamente las finanzas descentralizadas.</p>
+                        <a class="my-3 btn text-md-center btn-primary"
+                            href="https://coinmarketcap.com/es/view/defi/">Saber más</a>
                     </div>
                 </div>
                 <div class="col-lg-4">
                     <div class="features-icons-item mx-auto mb-5 mb-lg-0 mb-lg-3">
                         <div class="features-icons-icon d-flex">
-                            <i class="far fa-chart-bar icon-screen-desktop m-auto text-dark" style="font-size: 4rem;"></i>
-                            
+                            <i class="far fa-chart-bar icon-screen-desktop m-auto text-dark"
+                                style="font-size: 4rem;"></i>
+
                         </div>
                         <h3>Binance</h3>
                         <p class="lead mb-0">Buy & sell Crypto in minutes
                             Join the world's largest crypto exchange.</p>
-                        <a class="my-3 btn text-md-center btn-primary" href="https://www.binance.com/en">Saber más</a>
+                        <a class="my-3 btn text-md-center btn-primary"
+                            href="https://www.binance.com/en/register?ref=ZHHMXKYZ">Saber más</a>
                     </div>
                 </div>
             </div>
