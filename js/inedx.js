@@ -70,33 +70,28 @@ function submitFormulario(e) {
 function consultarAPI() {
     const { criptomoneda } = objBusqueda;
 
-    fetch(`https://min-api.cryptocompare.com/data/pricemultifull?fsyms=${criptomoneda}&tsyms=USD`)
+    fetch(`https://min-api.cryptocompare.com/data/pricemultifull?fsyms=REP,${criptomoneda}&tsyms=USD`)
     .then( respuesta => respuesta.json() )
     .then( cotizacion  => {
-        mostrarCotizacionHTML(cotizacion.DISPLAY[criptomoneda])
+          mostrarCotizacionHTML(cotizacion.DISPLAY[criptomoneda])
     })
-        
-    //.then( cotizacion => {
-        //console.log(cotizacion);
-    //})
-
+    
 
 };
 
 function mostrarCotizacionHTML(cotizacion) {
 
-    const { PRICE, MKTCAP} = cotizacion;
+    const { PRICE, MKTCAP } = cotizacion.USD;
 
+    const valor1 = PRICE
+    const valor2 = MKTCAP
 
     console.log(cotizacion.USD);
-    $('#price').text('PRICE')
-    $('#mktcp').text('MKTCAP')
+    console.log(valor1)
+    console.log(valor2)
 
-
-    const precio = document.createElement('p');
-    precio.innerHTML = '<p>Precio <span>${PRICE}</span>' 
-
-    //resultado.appendChild(precio)
+    $('#price').text(valor1)
+    $('#mktcp').text(valor2)  
 
 }
 

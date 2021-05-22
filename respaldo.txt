@@ -52,7 +52,9 @@ function selectCriptomonedas(criptomonedas) {
 https://min-api.cryptocompare.com/data/top/mktcapfull?limit=100&tsym=USD
 https://min-api.cryptocompare.com/data/pricemultifull?fsyms=BTC&tsyms=USD
 https://min-api.cryptocompare.com/data/pricemultifull?fsyms=BTC&tsyms=USD
-// https://coingecko.com/api/documentations/v3/coins/{id}/tickers
+https://min-api.cryptocompare.com/data/pricemultifull?fsyms=REP,${criptomoneda}&tsyms=USD,XMR&extraParams=your_app_name
+https://coingecko.com/api/documentations/v3/coins/{id}/tickers
+https://api.coingecko.com/api/v3/coins/list?include_platform=true
 
 
 // jQuery section
