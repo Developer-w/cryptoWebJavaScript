@@ -1,7 +1,7 @@
 //alert("Advertncia")
 
 
-/* const cryptomonedaSelect = document.querySelector("#criptomonedas");
+const cryptomonedaSelect = document.querySelector("#criptomonedas");
 
 const obtenerCriptomonedas = criptomonedas => new Promise( resolve => {
     resolve(criptomonedas);
@@ -25,13 +25,13 @@ function consultarCriptomonedas() {
 
 };
 
-// const botonCripto = $('#criptomonedas')
+const botonCripto = $('#criptomonedas')
 
-// botonCripto.on ('click', function(event) {
-// event.preventDefault()
+botonCripto.on ('click', function(event) {
+event.preventDefault()
 
 
-// });
+});
 
 
 function selectCriptomonedas(criptomonedas) {
@@ -49,8 +49,9 @@ function selectCriptomonedas(criptomonedas) {
 };
 
 
-// https://min-api.cryptocompare.com/data/top/mktcapfull?limit=100&tsym=USD
-// https://min-api.cryptocompare.com/data/pricemultifull?fsyms=BTC&tsyms=USD
+https://min-api.cryptocompare.com/data/top/mktcapfull?limit=100&tsym=USD
+https://min-api.cryptocompare.com/data/pricemultifull?fsyms=BTC&tsyms=USD
+https://min-api.cryptocompare.com/data/pricemultifull?fsyms=BTC&tsyms=USD
 // https://coingecko.com/api/documentations/v3/coins/{id}/tickers
 
 
@@ -82,34 +83,13 @@ botonIr.on('click', function(event) {
 });
 
 
-/*
 
 
 
 
 
 
-'use strict'
 
 
 
-
-
-const revisarAPI = ()=>{
-
-    console.log($.get('https://min-api.cryptocompare.com/data/pricemultifull?fsyms=BTC&tsyms=USD', function(response) {
-        
-        
-
-        //$('#price').text(precio)
-        //$('#mktcp').text(Maeketcap)
-
-
-    }))
-
-        
-
-};
-
-$('#revisar').on('click', revisarAPI)
 

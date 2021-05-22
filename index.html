@@ -68,29 +68,32 @@
 
                     <form id="formulario">
                         <div class="row">
+
                             <div class="row container-fluid">
 
-                                <div class="form-group my-2 col-4 text-start">
+                                <div class="form-group my-2 col-lg-4 text-start">
                                     <label class="" for="cryptomoneda">Coin</label>
                                     <select class="form-control" id="criptomonedas" name="criptomoneda" required>
-                                        <option value="">Criptomoneda...</option>
+                                        <option value="" disabled selected>Elige tu Criptomoneda...</option>
                                     </select>
                                 </div>
 
-                                <div class="form-group my-2 col-4 text-start">
+                                <div class="form-group my-2 col-lg-4 text-start">
                                     <label class="" for="cryptomoneda">Precio U$</label>
-                                    <input value="" disabled selected type="text" id="price"
-                                        placeholder="Precio actual..." class="form-control" required>
+                                    <blockquote class="form-control">
+                                        <p id="price" style="height: 10px;">Precio actual...</p>
+                                    </blockquote>
                                 </div>
 
-                                <div class="form-group my-2 col-4 text-start">
+                                <div class="form-group my-2 col-lg-4 text-start">
                                     <label class="" for="cryptomoneda">Market Cap U$</label>
-                                    <input value="" disabled selected type="text" id="mktcp"
-                                        placeholder="Mercado actual..." class="form-control" required>
+                                    <blockquote class="form-control">
+                                        <p id="mktcp" style="height: 10px;">Capitalización...</p>
+                                    </blockquote>
                                 </div>
 
                                 <div class="text-end gap-2 mt-3">
-                                    <button id="botonCripto" class="btn btn-primary" type="submit">Revisar</button>
+                                    <button id="revisar" class="btn btn-primary" type="submit">Revisar</button>
                                 </div>
                             </div>
 
@@ -130,8 +133,9 @@
                                 </div>
                                 <div class="form-group pb-3">
                                     <label for="formGroupExampleInput2">IR/Periodo de Recuperación</label>
-                                    <input type="text" disabled selected class="form-control"
-                                        id="inputIr" placeholder="Dias para recupera su Inversion">
+                                    <blockquote class="form-control bg-secondary text-white">
+                                        <p  id="inputIr" style="height: 10px;">Dias para recupera su Inversion.</p>
+                                    </blockquote>
                                 </div>
 
                             </form>
@@ -148,7 +152,7 @@
                     </div>
                 </div>
 
-                <div class="col-lg-4 mb-sm-4">
+                <!-- <div class="col-lg-4 mb-sm-4">
                     <div class="card shadow">
 
                         <div class="inner">
@@ -174,13 +178,13 @@
                                 </div>
                                 <div class="form-group pb-3">
                                     <label for="formGroupusdInput">Valor En $USD</label>
-                                    <input type="text" class="form-control" id="usdInput"
+                                    <input  type="text" class="form-control" id="usdInput"
                                         placeholder="USD">
                                 </div>
 
                             </form>
 
-                            <div class="text-center">
+                            <div class="text-center mt-3">
                                 <p class="card-text text-center">Seleccione su cryptomoneda y alculale su Valor. Ingrese el valor en satoshi o en USD</p>
                                 <div class="text-center gap-2 mt-3">
                                     <button onclick="calcularCripto()" class="btn btn-primary" type="submit">Calcular</button>
@@ -188,9 +192,9 @@
                             </div>
                         </div>
                     </div>
-                </div>
+                </div> -->
 
-                <div class="col-lg-4 mb-sm-4">
+                <!-- <div class="col-lg-4 mb-sm-4">
                     <div class="card shadow ">
 
                         <div class="inner">
@@ -214,8 +218,9 @@
                                 </div>
                                 <div class="form-group pb-3">
                                     <label for="formGroupMarketCapTargetInput">MarketCap Target / Supply Target</label>
-                                    <input type="text" disabled selected class="form-control"
-                                        id="formGroupMarketCapTarget" placeholder="Debe Alcanzar un Market y Supply de...">
+                                    <blockquote class="form-control bg-secondary text-white">
+                                        <p  id="formGroupMarketCapTarget" style="height: 10px;">Debe Alcanzar un Market y Supply de...</p>
+                                    </blockquote>
                                 </div>
 
                             </form>
