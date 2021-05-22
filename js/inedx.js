@@ -16,7 +16,8 @@ document.addEventListener("DOMContentLoaded", () => {
     cryptomonedaSelect.addEventListener('change', leerValor);
 });
 
-//select Criptomoneda
+//Lista de Criptomoneda
+
 const consultaCripto = () => {    
 
     fetch(`https://min-api.cryptocompare.com/data/top/mktcapfull?limit=100&tsym=USD`)
@@ -26,8 +27,6 @@ const consultaCripto = () => {
 
    
 };
-
-
 
 function selectCriptomonedas(criptomonedas) {
     
@@ -74,8 +73,7 @@ function consultarAPI() {
     .then( respuesta => respuesta.json() )
     .then( cotizacion  => {
           mostrarCotizacionHTML(cotizacion.DISPLAY[criptomoneda])
-    })
-    
+    })   
 
 };
 
@@ -96,3 +94,41 @@ function mostrarCotizacionHTML(cotizacion) {
 }
 
 $('#revisar').on('click', consultarAPI);
+
+
+//section Card
+
+const invInicial = $('#inputCapital');
+const aprAnual = $('#inputApr');
+const irDias = $('#inputIr')
+const botonIr = $('#buttonAnalisis');
+
+//console.log(invInicial);
+//console.log(aprAnual);
+//console.log(irDias);
+//console.log(botonIr);
+
+botonIr.on('click', function() {
+    //event.preventDefault()
+
+    const valorUno = invInicial.val()
+    const valorDos = aprAnual.val()
+    const valorDPR = valorDos/365
+    const valorFactor = valorDPR* (0.01)
+    const valorDiaria = valorUno*valorFactor
+    const ir = valorUno/valorDiaria
+
+    if (valorUno.length >= 1,  valorDos.length >= 1) {
+
+
+        console.log(valorUno)
+        console.log(valorDos)
+        console.log(valorDPR)
+        console.log(valorFactor)
+        console.log(ir)
+
+
+        $('#inputIr').text(ir + ' dias')
+    }
+
+});
