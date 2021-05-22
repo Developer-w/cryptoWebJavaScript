@@ -2,7 +2,7 @@
 const cryptomonedaSelect = document.querySelector("#criptomonedas");
 const formulario = document.querySelector('#formulario')
 const objBusqueda = {
-    cryptomomeda : ''
+    criptomoneda : ''
 }
 
 const obtenerCriptomonedas = criptomonedas => new Promise( resolve => {
@@ -16,17 +16,15 @@ document.addEventListener("DOMContentLoaded", () => {
     cryptomonedaSelect.addEventListener('change', leerValor);
 });
 
-
+//select Criptomoneda
 const consultaCripto = () => {    
+
     fetch(`https://min-api.cryptocompare.com/data/top/mktcapfull?limit=100&tsym=USD`)
     .then( respuesta => respuesta.json() )
     .then( resultado => obtenerCriptomonedas(resultado.Data) )
     .then( criptomonedas => selectCriptomonedas(criptomonedas) ) 
 
-    //.then( data => {
-        //$('#price').text('Precio')
-        //$('#mktcp').text('Maeketcap')
-    //})
+   
 };
 
 
@@ -46,7 +44,7 @@ function selectCriptomonedas(criptomonedas) {
 };
 
 
-
+//leer valor Criptomoneda
 function leerValor(e){
     objBusqueda[e.target.name] = e.target.value;
 }
@@ -58,16 +56,19 @@ function submitFormulario(e) {
     if(criptomoneda === '') {
         mostrarAlerta('Este Campo es Obligatorio');
         return;
-
     }
+
+    //consultarAPI();
 }
 
 // function mostrarAlerta(msg) {
 
 // }
 
+
+//Consultando API
 function consultarAPI() {
-    const { criptomoneda } = objBusqueda
+    const { criptomoneda } = objBusqueda;
 
     fetch(`https://min-api.cryptocompare.com/data/pricemultifull?fsyms=${criptomoneda}&tsyms=USD`)
     .then( respuesta => respuesta.json() )
@@ -75,16 +76,27 @@ function consultarAPI() {
         mostrarCotizacionHTML(cotizacion.DISPLAY[criptomoneda])
     })
         
+    //.then( cotizacion => {
+        //console.log(cotizacion);
+    //})
+
 
 };
 
 function mostrarCotizacionHTML(cotizacion) {
 
-    const {PRICE, MKTCAP} = cotizacion;
-    
-    
-    //$('#price').text.val()
-    //$('#mktcp').text('MKTCAP')
+    const { PRICE, MKTCAP} = cotizacion;
+
+
+    console.log(cotizacion.USD);
+    $('#price').text('PRICE')
+    $('#mktcp').text('MKTCAP')
+
+
+    const precio = document.createElement('p');
+    precio.innerHTML = '<p>Precio <span>${PRICE}</span>' 
+
+    //resultado.appendChild(precio)
 
 }
 
