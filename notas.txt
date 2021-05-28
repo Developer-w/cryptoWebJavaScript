@@ -56,6 +56,36 @@ https://coingecko.com/api/documentations/v3/coins/{id}/tickers
 https://api.coingecko.com/api/v3/coins/list?include_platform=true
 
 
+
+const apikey = { 
+    key:'c6ad726c-569e-4568-8127-b46f662728e4'
+}
+
+request('GET', 'https://pro-api.coinmarketcap.com/v1/global-metrics/quotes/latest?CMC_PRO_API_KEY=' + apikey.key)
+.then((r1) => {
+    const x1 = JSON.parse(r1.target.responseText);
+    console.log(x1.data.quote.USD.total_market_cap);
+}).catch()
+
+function request(method, url) {
+    return new Promise(function (resolve, reject) {
+        const xhr = new XMLHttpRequest();
+        xhr.open(method, url);
+        xhr.onload = resolve;
+        xhr.onerror = reject;
+        xhr.send();
+    });
+}
+
+
+coinmarketcap API
+https://pro-api.coinmarketcap.com/v1/cryptocurrency/quotes/latest
+https://pro-api.coinmarketcap.com/v1/tools/price-conversion
+
+X-CMC_PRO_API_KEY
+keyApi = c6ad726c-569e-4568-8127-b46f662728e4
+
+
 // jQuery section
 
 const invInicial = $('#inputCapital');
@@ -106,7 +136,7 @@ else{
 console.log("nombreUsuario + numeroID")
 
 
-
+9
 
 
 

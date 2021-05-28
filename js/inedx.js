@@ -103,11 +103,6 @@ const aprAnual = $('#inputApr');
 const irDias = $('#inputIr')
 const botonIr = $('#buttonAnalisis');
 
-//console.log(invInicial);
-//console.log(aprAnual);
-//console.log(irDias);
-//console.log(botonIr);
-
 botonIr.on('click', function() {
     //event.preventDefault()
 
@@ -120,15 +115,12 @@ botonIr.on('click', function() {
 
     if (valorUno.length >= 1,  valorDos.length >= 1) {
 
-
-        console.log(valorUno)
-        console.log(valorDos)
-        console.log(valorDPR)
-        console.log(valorFactor)
-        console.log(ir)
-
-
-        $('#inputIr').text(ir + ' dias')
+        console.table({valorUno, valorDos, valorDPR, valorFactor, ir});
+        $('#inputIr').text(new Intl.NumberFormat("en-IN", {maximumSignificantDigits: 3}).format(ir) + ' dias')
     }
-
+    console.log(new Intl.NumberFormat("en-IN", {maximumSignificantDigits: 5}).format(ir))
 });
+
+
+
+
