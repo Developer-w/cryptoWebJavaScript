@@ -57,3 +57,6 @@ header.masthead h1 {
     transform: scale(1.5);
 }
 
+#page {
+    height: 100%;
+}

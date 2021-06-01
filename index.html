@@ -1,3 +1,4 @@
+
 <!DOCTYPE html>
 <html lang="en">
 
@@ -6,10 +7,7 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-    <!-- Bootstrap CSS -->
-    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta3/dist/css/bootstrap.min.css" rel="stylesheet"
-    integrity="sha384-eOJMYsd53ii+scO/bJGFsiCZc+5NDVN2yr8+0RDqr0Ql0h+rP48ckxlpbzKgwra6" crossorigin="anonymous">
-
+    
     <!-- SEO -->
     <meta property=”og:title” content=”Template default” />
     <meta property=”og:description” content=”Pagina Desarrollada con html, css, Bootstrap y js” />
@@ -26,6 +24,10 @@
     <!-- Link Font Awesome -->
     <script src="https://kit.fontawesome.com/b627ee8931.js" crossorigin="anonymous"></script>
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.4.1/font/bootstrap-icons.css">
+
+    <!-- Bootstrap CSS -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-eOJMYsd53ii+scO/bJGFsiCZc+5NDVN2yr8+0RDqr0Ql0h+rP48ckxlpbzKgwra6" crossorigin="anonymous">
+
 
 
     <!-- CSS Custom -->
@@ -49,7 +51,7 @@
             <!-- <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button> -->
 
             <div class="modal-dialog modal-lg modal-dialog-centered">
-                <img src="img/WalletBNB.png" class="img-fluid rounded" alt="Imagen BNB">
+                <img src="img/wallet.png" class="img-fluid rounded" alt="Imagen BNB">
             </div>
 
         </div>
@@ -118,23 +120,23 @@
                             <img src="img/marga-santoso-OmPqCwX422Y-unsplash.jpeg" class="card-img-top" alt="...">
                         </div>
 
-                        <div class="card-body p-3">
-                            <h5 class="card-title text-center pb-3">Analisis de Inversion (DeFI)</h5>
+                        <div class="card-body py-2">
+                            <h5 class="card-title text-center py-2">Analisis de Inversion (DeFI)</h5>
                             <form class="">
-                                <div class=" form-group pb-3">
+                                <div class=" form-group pb-2">
                                     <label for="formGroupExampleInput">Capital Inicial $USD</label>
-                                    <input type="text" class="form-control" id="inputCapital"
+                                    <input type="number" class="form-control" id="inputCapital"
                                         placeholder="Ingrese el capital Inicial en USD">
                                 </div>
-                                <div class="form-group pb-3">
+                                <div class="form-group pb-2">
                                     <label for="formGroupExampleInput2">% APR/Rentabilidad Anual de Retorno</label>
-                                    <input type="text" class="form-control" id="inputApr"
+                                    <input type="number" class="form-control" id="inputApr"
                                         placeholder="Ingrese la Rentabilidad Anual">
                                 </div>
-                                <div class="form-group pb-3">
+                                <div class="form-group pb-2">
                                     <label for="formGroupExampleInput2">IR/Periodo de Recuperación</label>
                                     <blockquote class="form-control bg-secondary text-white">
-                                        <p  id="inputIr" style="height: 10px;">Dias para recupera su Inversion.</p>
+                                        <p id="inputIr" style="height: 10px;">Dias para recupera su Inversion.</p>
                                     </blockquote>
                                 </div>
 
@@ -143,56 +145,69 @@
                             <div class="text-center">
                                 <p class="card-text text-center">Calcular de forma sencilla y rápida cuantos días
                                     necesita para recuperar su inversión.</p>
-                                    <div class="text-center mt-3">
-                                        <button id="buttonAnalisis" class="btn btn-primary" type="submit">Analizar</button>
-                                    </div>
+                                <div class="text-center mt-3">
+                                    <button id="buttonAnalisis" class="btn btn-primary" type="submit">Calcular</button>
+                                </div>
                             </div>
 
                         </div>
                     </div>
                 </div>
 
-                <!-- <div class="col-lg-4 mb-sm-4">
+                <div class="col-lg-4 mb-sm-4">
                     <div class="card shadow">
 
                         <div class="inner">
                             <img src="img/pexels-anna-nekrashevich-6801648.jpeg" class="card-img-top" alt="...">
                         </div>
 
-                        <div class="card-body p-5">
-                            <h5 class="card-title pb-3 text-center">Calculadora Criptomoneda</h5>
+                        <div class="card-body py-2">
+                            
+                            <h5 class="card-title text-center py-2">Calcular Valor Futuro de tu Inversión</h5>
 
                             <form class="">
-
-                                <div class="form-group pb-3">
-                                    <label class="" for="cryptomoneda">Coin</label>
-                                    <select class="form-control" id="criptomonedas" name="criptomoneda" required>
-                                        <option value="">Criptomoneda...</option>
-                                    </select>
-                                </div> 
-
-                                <div class=" form-group pb-3">
-                                    <label for="formGroupcoinInput">Cantididad de Satoshi</label>
-                                    <input type="text" class="form-control" id="coinInput"
-                                        placeholder="Satoshi">
+                                 
+                                <div class=" form-group pb-2">
+                                    <label for="formGroupExampleInput">Valor Presente (VP)</label>
+                                    <input type="number" class="form-control" id="inputCapital"
+                                        placeholder="Ingrese el capital Inicial en USD">
                                 </div>
-                                <div class="form-group pb-3">
-                                    <label for="formGroupusdInput">Valor En $USD</label>
-                                    <input  type="text" class="form-control" id="usdInput"
-                                        placeholder="USD">
+
+                                <div class="form-group row">
+                                    
+                                    <div class="col-lg-6 pb-2">
+                                        <label for="formValorFuturo">Tasa de Interes (i)</label>
+                                        <input type="number" class="form-control" id="inputRentabilidad"
+                                            placeholder="Interes %">
+                                    </div>
+
+                                    <div class="col-lg-6 pb-2">
+                                        <label for="formValorFuturo">Periodos (n)</label>
+                                        <input type="number" class="form-control" id="inputPeriodos"
+                                            placeholder="Nº de periodos">
+                                    </div>
+
+                                </div>
+
+                                <div class="form-group pb-2">
+                                    <label for="formValorPresete">Valor Futuro (VF)</label>
+                                    <blockquote class="form-control bg-secondary text-white">
+                                        <p id="inputIr" style="height: 10px;">Valor Futuro Esperado.</p>
+                                    </blockquote>
                                 </div>
 
                             </form>
 
-                            <div class="text-center mt-3">
-                                <p class="card-text text-center">Seleccione su cryptomoneda y alculale su Valor. Ingrese el valor en satoshi o en USD</p>
-                                <div class="text-center gap-2 mt-3">
-                                    <button onclick="calcularCripto()" class="btn btn-primary" type="submit">Calcular</button>
+                            <div class="text-center">
+                                <p class="card-text text-center">Calcular de forma sencilla y rápida cuantos días
+                                    necesita para recuperar su inversión.</p>
+                                <div class="text-center mt-3">
+                                    <button id="buttonAnalisis" class="btn btn-primary" type="submit">Calcular</button>
                                 </div>
                             </div>
                         </div>
                     </div>
-                </div> -->
+                </div> 
 
                 <!-- <div class="col-lg-4 mb-sm-4">
                     <div class="card shadow ">
